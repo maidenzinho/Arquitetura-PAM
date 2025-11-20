@@ -54,7 +54,7 @@ arquitetura-pam/
 1. **Clone e entre no projeto:**
 ```bash
 git clone [url-desse-repositório]
-cd Arquitetura-Pam
+cd Arquitetura-PAM
 ```
 
 2. **Suba os containers:**
