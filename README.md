@@ -53,7 +53,7 @@ arquitetura-pam/
 
 1. **Clone e entre no projeto:**
 ```bash
-git clone [url-desse-repositório]
+git clone https://github.com/maidenzinho/Arquitetura-PAM.git
 cd Arquitetura-PAM
 ```
 
