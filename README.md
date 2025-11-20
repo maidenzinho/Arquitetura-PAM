@@ -1,6 +1,3 @@
-Aqui está o README.md editado para o professor executar sem problemas:
-
-```markdown
 # 🔐 Sistema PAM - Autenticação com Certificados SSH Expiráveis
 
 ## 📋 Descrição do Projeto
@@ -55,13 +52,13 @@ arquitetura-pam/
 ### 🔧 Configuração Inicial Obrigatória
 
 #### 1. **Clonar e Acessar o Projeto**
-```bash
+```
 git clone https://github.com/maidenzinho/Arquitetura-PAM.git
 cd arquitetura-pam
 ```
 
 #### 2. **Configurar Ambiente Python (OBRIGATÓRIO)**
-```bash
+```
 # Criar ambiente virtual
 python3 -m venv venv
 
@@ -73,7 +70,7 @@ pip install pyotp
 ```
 
 #### 3. **Build dos Containers Docker (OBRIGATÓRIO)**
-```bash
+```
 # Build de todos os serviços
 docker compose build
 
@@ -84,7 +81,7 @@ docker images | grep arquitetura-pam
 ### 🏃‍♂️ Execução do Sistema
 
 #### 4. **Iniciar os Serviços**
-```bash
+```
 # Subir todos os containers
 docker compose up -d
 
@@ -101,7 +98,7 @@ docker compose ps
 - pam-ssh-server
 
 #### 5. **Verificar Saúde dos Serviços**
-```bash
+```
 # Testar Signer App
 curl http://localhost:5000/health
 
@@ -114,7 +111,7 @@ curl http://localhost:8080/health
 ```
 
 #### 6. **Executar Teste Completo**
-```bash
+```
 # Navegar para cliente
 cd client
 
@@ -148,12 +145,12 @@ testuser
 ## 🐛 Solução de Problemas Comuns
 
 ### ❌ Erro: "python3: command not found"
-```bash
+```
 sudo apt update && sudo apt install python3 python3-pip python3-venv
 ```
 
 ### ❌ Erro: "docker: command not found"
-```bash
+```
 # Instalar Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -164,12 +161,12 @@ sudo apt install docker-compose-plugin
 ```
 
 ### ❌ Erro: "pip: command not found"
-```bash
+```
 sudo apt install python3-pip
 ```
 
 ### ❌ Erro: Portas ocupadas
-```bash
+```
 # Verificar portas em uso
 sudo netstat -tulpn | grep -E ':(5000|8080|2223)'
 
@@ -179,7 +176,7 @@ sudo netstat -tulpn | grep -E ':(5000|8080|2223)'
 ```
 
 ### ❌ Erro: "Cannot connect to Docker daemon"
-```bash
+```
 # Iniciar serviço Docker
 sudo systemctl start docker
 sudo systemctl enable docker
@@ -189,7 +186,7 @@ sudo usermod -aG docker $USER
 ```
 
 ### ❌ Build do Docker falha
-```bash
+```
 # Limpar cache e rebuildar
 docker compose build --no-cache
 
@@ -200,7 +197,7 @@ docker compose build signer-app
 ## 📊 Comandos de Verificação
 
 ### Verificar Sistema Funcionando
-```bash
+```
 # 1. Containers rodando
 docker compose ps
 
@@ -217,7 +214,7 @@ ssh -i /tmp/pam_key \
 ```
 
 ### Verificar Certificado Gerado
-```bash
+```
 # Ver detalhes do certificado
 ssh-keygen -L -f /tmp/pam_key-cert.pub
 
@@ -225,15 +222,13 @@ ssh-keygen -L -f /tmp/pam_key-cert.pub
 ssh-keygen -L -f /tmp/pam_key-cert.pub | grep -A 2 "Valid:"
 ```
 
-## 🧹 Limpeza do Ambiente
-
+### 🧹 Limpeza do Ambiente
+```
 ### Parar Serviços
-```bash
 docker compose down
 ```
-
 ### Limpeza Completa
-```bash
+```
 # Parar e remover tudo
 docker compose down -v
 
@@ -257,7 +252,7 @@ deactivate
 5. ✅ Print dos detalhes do certificado (validade de 10min)
 
 ### Comandos para Demonstração:
-```bash
+```
 # 1. Mostrar arquitetura
 tree -I 'venv|__pycache__'
 
@@ -282,9 +277,8 @@ ssh-keygen -L -f /tmp/pam_key-cert.pub | head -20
 ---
 
 ## 🆘 Suporte Rápido
-
+```
 ### Sequência para Debug:
-```bash
 # 1. Verificar pré-requisitos
 docker --version && python3 --version
 
@@ -301,17 +295,14 @@ curl http://localhost:8080/health || echo "Vault CA offline"
 # 5. Reinstalar se necessário
 docker compose down && docker compose up -d
 ```
-
 ### Se nada funcionar:
 1. Execute todos os passos da **Configuração Inicial Obrigatória**
 2. Verifique se as **portas 5000, 8080 e 2223** estão livres
 3. Confirme que o **ambiente virtual Python está ativado**
 4. Execute `docker compose build --no-cache` para rebuild completo
 
----
 
 **🎉 Preparado para Demonstração!** Siga a sequência na ordem e qualquer problema consulte a seção de Solução de Problemas.
-```
 
 ## 🎯 **Principais Melhorias para o Professor:**
 
