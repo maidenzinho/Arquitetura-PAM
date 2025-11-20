@@ -323,4 +323,4 @@ docker compose down && docker compose up -d
 6. **✅ Resultado esperado claro** - mostrando o output ideal
 7. **✅ Comandos de verificação** - para debug rápido
 
-Agora o professor conseguirá executar sem problemas! 🚀
+Agora conseguirá executar sem problemas! 🚀
