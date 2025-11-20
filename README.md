@@ -242,8 +242,6 @@ rm -f /tmp/pam_key* /tmp/test_key*
 deactivate
 ```
 
-## 📝 Para o Relatório
-
 ### Evidências de Funcionamento:
 1. ✅ Print dos 3 containers rodando (`docker compose ps`)
 2. ✅ Print dos endpoints de saúde respondendo
@@ -304,7 +302,7 @@ docker compose down && docker compose up -d
 
 **🎉 Preparado para Demonstração!** Siga a sequência na ordem e qualquer problema consulte a seção de Solução de Problemas.
 
-## 🎯 **Principais Melhorias para o Professor:**
+## 🎯 **Principais Melhorias:**
 
 1. **✅ Configuração Python explícita** - criando venv e instalando pyotp
 2. **✅ Build Docker obrigatório** - antes de executar
